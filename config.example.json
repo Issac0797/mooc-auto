@@ -1,0 +1,23 @@
+{
+  "cdpUrl": "http://127.0.0.1:9222",
+  "platform": "icourse163",
+  "course": {
+    "courseId": "NUIST-1206810807",
+    "tid": "1487847445",
+    "baseUrl": "https://www.icourse163.org"
+  },
+  "provider": "deepseek",
+  "baseUrl": "",
+  "model": "deepseek-chat",
+  "apiKey": "",
+  "source": "auto",
+  "pace": "auto",
+  "fastMs": 120,
+  "fastJitterMs": 80,
+  "slowMs": 1800,
+  "slowJitterMs": 400,
+  "probe": { "clicks": 3, "intervalMs": 150 },
+  "batchSize": 15,
+  "outDir": "./out",
+  "selectors": {}
+}

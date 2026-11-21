@@ -1,0 +1,15 @@
+{
+  "name": "mooc-auto",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "中国大学MOOC(icourse163) 单元测验自动答题：CDP 接管已登录浏览器 + 大模型答题 + 慢速填写规避风控",
+  "bin": { "mooc-auto": "mooc.mjs" },
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node tests/unit.mjs && node tests/fill-smoke.mjs",
+    "test:unit": "node tests/unit.mjs",
+    "test:fill": "node tests/fill-smoke.mjs"
+  },
+  "dependencies": { "playwright-core": "^1.65.1" }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>fixture quiz</title>
+  <style>
+    body { font-family: "Microsoft YaHei", sans-serif; padding: 24px; }
+    .u-questionItem { border-bottom: 1px dashed #ccc; padding: 16px 0; }
+    .j-qacate { color: #888; font-size: 12px; }
+    .j-richTxt { font-weight: 600; margin: 8px 0; }
+    .j-choicebox ul { list-style: none; padding: 0; }
+    .j-choicebox li { display: flex; gap: 8px; padding: 4px 0; }
+    .optionPos { width: 20px; }
+    .u-icon-correct::after { content: "✓"; color: #18a058; }
+    .u-icon-wrong::after { content: "✗"; color: #d03050; }
+  </style>
+</head>
+<body>
+  <h2>模拟测验（离线夹具）</h2>
+  <div id="quiz">
+    <!-- 1 单选 -->
+    <div class="u-questionItem">
+      <div class="j-title"><span class="j-qacate">单选(1分)</span></div>
+      <div class="j-richTxt">创新的核心是（ ）。</div>
+      <div class="j-choicebox"><ul>
+        <li><input class="u-tbi" type="radio" name="q1" id="q1a"><label for="q1a"><span class="optionPos">A.</span><span class="optionCnt">创新过程</span></label></li>
+        <li><input class="u-tbi" type="radio" name="q1" id="q1b"><label for="q1b"><span class="optionPos">B.</span><span class="optionCnt">创新思维</span></label></li>
+        <li><input class="u-tbi" type="radio" name="q1" id="q1c"><label for="q1c"><span class="optionPos">C.</span><span class="optionCnt">创新能力</span></label></li>
+      </ul></div>
+    </div>
+
+    <!-- 2 多选（先人为点错 A，验证纠错） -->
+    <div class="u-questionItem">
+      <div class="j-title"><span class="j-qacate">多选(2分)</span></div>
+      <div class="j-richTxt">创新的特征有（ ）。</div>
+      <div class="j-choicebox"><ul>
+        <li><input class="u-tbi" type="checkbox" name="q2" id="q2a" checked><label for="q2a"><span class="optionPos">A.</span><span class="optionCnt">明确目的性</span></label></li>
+        <li><input class="u-tbi" type="checkbox" name="q2" id="q2b"><label for="q2b"><span class="optionPos">B.</span><span class="optionCnt">综合新颖性</span></label></li>
+        <li><input class="u-tbi" type="checkbox" name="q2" id="q2c"><label for="q2c"><span class="optionPos">C.</span><span class="optionCnt">高风险高回报性</span></label></li>
+      </ul></div>
+    </div>
+
+    <!-- 3 判断（正确在第二项，验证按图标识别） -->
+    <div class="u-questionItem">
+      <div class="j-title"><span class="j-qacate">判断(1分)</span></div>
+      <div class="j-richTxt">创新活动可以不遵循事物发展的规律。</div>
+      <div class="j-choicebox"><ul>
+        <li><input class="u-tbi" type="radio" name="q3" id="q3a"><label for="q3a"><span class="optionPos">A.</span><span class="optionCnt"><span class="u-icon-wrong"></span></span></label></li>
+        <li><input class="u-tbi" type="radio" name="q3" id="q3b"><label for="q3b"><span class="optionPos">B.</span><span class="optionCnt"><span class="u-icon-correct"></span></span></label></li>
+      </ul></div>
+    </div>
+  </div>
+  <script>
+    // 模拟站点：记录每次改动
+    window.__changes = [];
+    document.addEventListener('change', (e) => {
+      window.__changes.push({ id: e.target.id, checked: e.target.checked });
+    });
+  </script>
+</body>
+</html>

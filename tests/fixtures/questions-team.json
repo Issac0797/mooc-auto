@@ -1,0 +1,1157 @@
+[
+ {
+  "i": 1,
+  "type": "单选(1分)",
+  "stem": "（）个及以上的人就形成一个群体",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "一",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "四",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "二",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "三",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 2,
+  "type": "单选(1分)",
+  "stem": "在创业团队人员选择中哪项不是主要考虑因素（ ） ‍",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "人员技能的互补性",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "员工是否享受生活",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "人员能力",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "人员的经验",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 3,
+  "type": "单选(1分)",
+  "stem": "（ ）在创业企业的管理中，以创业企业的远景、战略的形式体现。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "人员",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "目标",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "模式",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "权力",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 4,
+  "type": "单选(1分)",
+  "stem": "当群体有了共同奋斗的（），就形成了团队。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "使命",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "价值观",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "目标",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "受教育背景",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 5,
+  "type": "单选(1分)",
+  "stem": "沙僧在团队中代表了（ ）。 ‍",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "劳者，提供后勤保障。",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "能者，提供工作业绩。",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "德者，领导团队奔向目标。",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "智者，出谋划策。",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 6,
+  "type": "单选(1分)",
+  "stem": "‍在创业团队的以下职位中，适合沙僧的职位是（ ）。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "有活跃思维的策划",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "交际能力比较好的营销",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "有专业的财务知识的财务",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "强调领导能力的队长",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 7,
+  "type": "单选(1分)",
+  "stem": "在团队中控制猪八戒型成员的有效手段是（ ）。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "注意保持距离，不可过度亲昵",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "重在教化，内在的改变他",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "提高其自主意识，减少对他的指挥，减轻自己的压力",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "创造各种条件束缚他",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 8,
+  "type": "单选(1分)",
+  "stem": "从唐僧的经验可以看出，领导者可以不具备的条件是（）。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "不偏袒，使下属相互制衡",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "能控制业务骨干",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "精通业务",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "有后台支持，得到一致认同",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 9,
+  "type": "单选(1分)",
+  "stem": "创业团队组建选择（ ） 的原则能减少创业期的运作成本，最大比例地分享成果。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "目标明确合理",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "动态开放",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "互补",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "精简高效",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 10,
+  "type": "单选(1分)",
+  "stem": "‍创业团队组建中明确创业目标指（ ）。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "设定若干个可行的、阶段性子目标",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "先确定具体子目标",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "明确总目标",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "先确定总目标，再将总目标加以分解",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 11,
+  "type": "单选(1分)",
+  "stem": "创业团队开放过程中，在明确创业目标后，就要制定（ ）",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "创业计划书",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "目标任务书",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "财务报告",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "贷款申请书",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 12,
+  "type": "单选(1分)",
+  "stem": "创业团队人员的招募考虑互补性，下列描述不正确的是（ ）。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "这种互补性能保证整个团队的战斗力，更好地发挥团队的作用",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "这种互补性形成有助于强化团队成员间彼此的合作",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "考虑该人员能否与其他成员在能力或技术上形成互补",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "考虑该人员能否与其他成员在沟通上优势互补",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 13,
+  "type": "单选(1分)",
+  "stem": "‍创业团队要实现有效地激励，首先应（ ）。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "了解团队成员专长",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "明确团队成员任务分工",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "了解团队成员的需求",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "必须把成员的收益模式界定清楚",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 14,
+  "type": "单选(1分)",
+  "stem": "团队的调整融合最为重要的是（ ）。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "保证团队成员间经常进行有效地沟通与协调",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "进行创业团队制度设计",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "进行团队成员的利益划分",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "进行团队成员职权划分",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 15,
+  "type": "单选(1分)",
+  "stem": "‍招募合适的人员重点考虑（ ），这样创业成功概率更大。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "营销水平",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "个人技术",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "知识结构",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "个人资源",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 16,
+  "type": "单选(1分)",
+  "stem": "成功创业团队应树立目标意识、集体意识、竞争意识、危机意识和（ ）意识。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "反抗",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "妥协",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "共赢",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "服务",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 17,
+  "type": "单选(1分)",
+  "stem": "‍让团队成员时刻清醒的认识到：“竞争对手正在虎视眈眈地盯着我们，等着我们犯错”，是为了培养团队成员的（ ）意识。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "危机",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "竞争",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "集体",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "目标",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 18,
+  "type": "单选(1分)",
+  "stem": "创业团队成员应始终追求（ ）目标。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "利润",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "客户满意",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "业界一流",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "求同存异",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 19,
+  "type": "单选(1分)",
+  "stem": "海尔集团以“永远战战兢兢，永远如履薄冰”为生存理念，这是为了培养团队成员的（ ）意识。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "集体",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "危机",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "服务",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "目标",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 20,
+  "type": "单选(1分)",
+  "stem": "下列说法，错误的是（ ）。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "每一个团队成员都必须有明确的目标",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "按要求目标需要每个团队成员的高度责任心作保障",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "C",
+    "text": "团队出现危机时，团队成员要努力完成自己的既定目标，以摆脱团队的危机",
+    "icon": "",
+    "type": "radio"
+   },
+   {
+    "pos": "D",
+    "text": "团队成员的个人目标不必与团队的目标结合起来",
+    "icon": "",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 21,
+  "type": "多选(2分)",
+  "stem": "‍创业团队人员的招募应考虑 ( ) 。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "个人背景",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "B",
+    "text": "适度规模",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "C",
+    "text": "职权划分",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "D",
+    "text": "互补",
+    "icon": "",
+    "type": "checkbox"
+   }
+  ]
+ },
+ {
+  "i": 22,
+  "type": "多选(2分)",
+  "stem": "作为创业团队，必须满足（ ）。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "思考性",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "B",
+    "text": "自主性",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "C",
+    "text": "和谐性",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "D",
+    "text": "合作性",
+    "icon": "",
+    "type": "checkbox"
+   }
+  ]
+ },
+ {
+  "i": 23,
+  "type": "多选(2分)",
+  "stem": "‍下列说法正确的是（ ）。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "毫不客气地将影响团队工作进度或士气后进分子赶出团队",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "B",
+    "text": "团队中要进入竞争机制，坚决按责权利均衡的原则",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "C",
+    "text": "要让团队的配角认识到如果他能够出色的完成他的工作，过段时间就有可能会荣升为主角。",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "D",
+    "text": "要让团队中的主角认识到他在主角的位置一旦出了差错，将可能被配角所代替。",
+    "icon": "",
+    "type": "checkbox"
+   }
+  ]
+ },
+ {
+  "i": 24,
+  "type": "多选(2分)",
+  "stem": "‍创业团队的定位包含（）定位和（）定位两个层面的含义。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "业务",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "B",
+    "text": "团队",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "C",
+    "text": "员工",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "D",
+    "text": "企业",
+    "icon": "",
+    "type": "checkbox"
+   }
+  ]
+ },
+ {
+  "i": 25,
+  "type": "多选(2分)",
+  "stem": "下列关于打造优秀团队的说法中，正确的是( )",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "个人价值追求要始终与团队目标保持高度一致",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "B",
+    "text": "努力消除个性特点，与他人保持高度协调统一",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "C",
+    "text": "时刻想着自己是团队的一员",
+    "icon": "",
+    "type": "checkbox"
+   },
+   {
+    "pos": "D",
+    "text": "做好自己本职工作是搞好集体工作的一个环节",
+    "icon": "",
+    "type": "checkbox"
+   }
+  ]
+ },
+ {
+  "i": 26,
+  "type": "判断(1分)",
+  "stem": "由于创业时人员比较少，所以创业活动各项事务主要依靠个人而非团队来运作。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 27,
+  "type": "判断(1分)",
+  "stem": "创业目标即创业远景，比较虚无缥缈，创业团队主要应该设立近期任务，尽快盈利解决生存问题。 ‍ ‍",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 28,
+  "type": "判断(1分)",
+  "stem": "缺乏共同的创业目标会使团队没有凝聚力。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 29,
+  "type": "判断(1分)",
+  "stem": "创业目标通过创业人员来实现。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 30,
+  "type": "判断(1分)",
+  "stem": "团队越成熟，领导者拥有的权利相对越大。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 31,
+  "type": "判断(1分)",
+  "stem": "选择创业人员时，应该选择相似技能的人，以在某一方面能成独特优势。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 32,
+  "type": "判断(1分)",
+  "stem": "团队目标是通过团队人员实现的。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 33,
+  "type": "判断(1分)",
+  "stem": "董事会能够保证公司战略目标的而实现和经营决策的有效性。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 34,
+  "type": "判断(1分)",
+  "stem": "为了有效吸收外部资源，以团队的形式来创业，各个团队成员及其不同的背景、经验以及社会关系，可以为创业活动带来多样化的资源，同时，团队也可以共同承担风险，降低企业失败的可能性。 ‍",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 35,
+  "type": "判断(1分)",
+  "stem": "团队，又叫team，不同的学者从不同的角度界定了它的含义。 比较有代表性的学者泰勒认为， 团队是由一群认同并致力与去达成某一共同目标的人所组成， 这一群人相处愉快并乐于工作在一起，共同为高品质的结果而努力。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 36,
+  "type": "判断(1分)",
+  "stem": "团队中每个人应该有足够的信心完成自己的任务，而且不受外界的因素影响。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 37,
+  "type": "判断(1分)",
+  "stem": "团队的失败会使团队中每个成员所付出的努力付诸东流。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 38,
+  "type": "判断(1分)",
+  "stem": "‍团队成员面对客户的态度可以决定团队目标的成败。 ‍",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 39,
+  "type": "判断(1分)",
+  "stem": "‍如果团队成员没有服务意识，团队就很难在市场竞争中创造客户，留住客户。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 40,
+  "type": "判断(1分)",
+  "stem": "团队成员应该一切听从领导的命令，不要轻易表达自己的观点。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 41,
+  "type": "判断(1分)",
+  "stem": "创业过程是一个确定性的过程。 ‍",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 42,
+  "type": "判断(1分)",
+  "stem": "创业计划书是在创业目标进行具体分解基础上，以团队为整体来考虑的计划，并没有明确不同创业阶段需要完成的阶段性任务。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 43,
+  "type": "判断(1分)",
+  "stem": "创业团队的制度体系应以规范化的书面形式确定下来，以免带来不必要的混乱。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 44,
+  "type": "判断(1分)",
+  "stem": "‍创业者加入团队的目的在于发挥他人所长。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   }
+  ]
+ },
+ {
+  "i": 45,
+  "type": "判断(1分)",
+  "stem": "创业团队的总目标就是要通过完成创业阶段的技术、市场、规划、管理等各项工作实现企业从无到有、从起步到成熟。",
+  "opts": [
+   {
+    "pos": "A",
+    "text": "",
+    "icon": "u-icon-wrong",
+    "type": "radio"
+   },
+   {
+    "pos": "B",
+    "text": "",
+    "icon": "u-icon-correct",
+    "type": "radio"
+   }
+  ]
+ }
+]

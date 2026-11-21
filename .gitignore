@@ -1,0 +1,21 @@
+# 依赖
+node_modules/
+
+# 运行产物
+out/
+*.log
+
+# 本地配置与密钥（绝不提交）
+config.json
+key.txt
+.env
+
+# 浏览器配置目录（含登录 cookie）
+browser-profile/
+.edge-profile/
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
