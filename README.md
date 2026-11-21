@@ -15,6 +15,8 @@
 - **可回读校验**：每题填完回读勾选状态，报告未填/填错项
 - **默认不交卷**：必须显式加 `--submit` 才会点"提交答案"
 
+> **第一次用？** 直接看文末 [§11 给其他人使用](#11-给其他人使用上手--接模型--停止)，里面有从零到跑通的完整步骤和"怎么停下来"。
+
 ---
 
 ## 1. 环境准备
@@ -150,6 +152,7 @@ node mooc.mjs probe --quiz "创业团队单元检测"
 |---|---|---|
 | `doctor` | 体检调试端口/登录态/答案库/Key | 否 |
 | `launch` | 拉起带调试端口的独立浏览器 | 否 |
+| `close` | 关闭 `launch` 拉起的浏览器 | 否 |
 | `list` | 列出测验列表与得分 | 否 |
 | `extract` | 打开测验并抓题（加 `--yes` 才点"开始测验"） | 点"开始测验"会启动 60 分钟计时 |
 | `answer` | 对题目文件生成答案 | 否 |
@@ -258,3 +261,107 @@ node mooc.mjs answer --in tests/fixtures/questions-team.json --source model \
 - 工具默认**不交卷**，交卷必须显式 `--submit`，方便你先人工核对
 - 慕课每次"再做一次"**抽到的题目是随机的**，因此不同次尝试的题目不同，不能靠背答案，需重新答题
 - 请自行遵守所在课程/学校的学术规范；成绩、风险由使用者自负
+
+---
+
+## 11. 给其他人使用：上手、接模型、停止
+
+### 11.1 五分钟跑通
+
+前置：**Node.js ≥ 18**，以及任意 Chrome / Edge（不用预装 git）。
+
+```bash
+git clone https://github.com/Issac0797/mooc-auto.git
+cd mooc-auto
+npm install                  # 只装 playwright-core，无浏览器下载
+node mooc.mjs launch         # 拉起一个"独立配置"的浏览器窗口
+```
+
+在**新弹出的窗口**里打开课程页并扫码登录一次（登录态存进 `./browser-profile/`，以后不用再登）。
+这个窗口和你日常浏览器互不影响，也不会被脚本关掉你别的标签页。
+
+然后自检两条：
+
+```bash
+node mooc.mjs doctor         # 应看到 cdpOk=true、session.hasIcourse163=true
+node mooc.mjs list           # 列出课程下所有测验 + 当前得分
+```
+
+### 11.2 怎么接模型
+
+只要**OpenAI 兼容**的 `/chat/completions` 都能用（DeepSeek、OpenAI、自建/中转网关）。
+
+```bash
+# A. DeepSeek（默认 provider）
+#    PowerShell: $env:DEEPSEEK_API_KEY="sk-xxx"    bash: export DEEPSEEK_API_KEY=sk-xxx
+node mooc.mjs run --quiz "创业团队单元检测" --dry-run
+
+# B. OpenAI
+node mooc.mjs run --quiz "创业团队单元检测" --yes --provider openai --model gpt-4o-mini --api-key sk-xxx
+
+# C. 自建 / 中转网关
+node mooc.mjs run --quiz "创业团队单元检测" --yes \
+  --base-url https://your-gateway/v1 --model your-model --api-key sk-xxx
+```
+
+Key 的四种传法（优先级从高到低）：
+
+| 方式 | 写法 |
+|---|---|
+| 命令行 | `--api-key sk-xxx` |
+| 文件 | `--api-key-file ./key.txt` |
+| 标准输入（不进 shell 历史） | `--api-key -`，回车后粘贴 |
+| 环境变量 / 配置文件 | `DEEPSEEK_API_KEY` / `OPENAI_API_KEY` / `MOOC_API_KEY`，或 `config.json` 的 `apiKey` |
+
+只想验证模型是否通、完全不碰浏览器：
+
+```bash
+node mooc.mjs extract --quiz "创业团队单元检测" --yes   # 生成 out/questions-<id>.json
+node mooc.mjs answer  --in out/questions-<id>.json      # 只调模型，产出 out/answers-<id>.json
+```
+
+**费用参考**：一次 45 题的测验约 3 次请求、几千 token，DeepSeek 上通常几分钱级别。
+不想用模型就 `--source key`（仅用内置答案库；**别人的课程题目不同，会大量未命中**）。
+日志里 Key 只显示打码形式（如 `sk-a…z9k2`），不会写进任何产物文件。
+
+### 11.3 推荐的稳妥顺序
+
+```bash
+node mooc.mjs list                                        # 1. 看剩余尝试次数
+node mooc.mjs run --quiz "创业风险单元检测" --dry-run      # 2. 只抓题+生成答案，不点击
+#    人工看一眼 out/questions-*.json 与 out/answers-*.json
+node mooc.mjs fill --quiz "创业风险单元检测" --answers out/answers-<id>.json   # 3. 只填不交
+node mooc.mjs run  --quiz "创业风险单元检测" --yes --submit                    # 4. 或直接一条龙+交卷
+```
+
+### 11.4 怎么停止
+
+| 想停的东西 | 做法 | 后果 |
+|---|---|---|
+| 正在跑的脚本 | 在终端按 **`Ctrl+C`** | 脚本退出；浏览器和页面上**已勾选的答案保持不动**，不会自动交卷 |
+| 脚本拉起的浏览器 | `node mooc.mjs close` | 通过 CDP 让浏览器自行退出（也可直接关窗口） |
+| 浏览器关不掉 | `launch` 输出里的 `pid` 就是主进程：`taskkill /PID <pid> /F` | 强制结束，登录态仍留在 `browser-profile/` |
+| 卡住不响应 | 关掉该终端窗口即可 | 脚本没有常驻后台服务，不占端口（除调试端口 9222 由浏览器持有） |
+| **已经开始的测验** | 停止脚本 ≠ 交卷；但**60 分钟计时仍在走**，到点平台可能自动交卷 | 不想交就尽早决定；已交卷的取多次中的最高分 |
+
+清理本地残留（可选）：
+
+```powershell
+Remove-Item -Recurse -Force browser-profile, out   # Windows
+rm -rf browser-profile out                         # bash
+```
+
+`browser-profile/` 装的是**你自己的登录 cookie**，已被 `.gitignore` 排除，不要外传。
+
+### 11.5 换一门课 / 换一个平台
+
+```bash
+# 换课程（慕课）
+node mooc.mjs list --course-id "NUIST-1206810807" --tid "1487847445"
+# 或写进 config.json: { "course": { "courseId": "...", "tid": "..." } }
+
+# 学习通：直接用作业页 URL
+node mooc.mjs run --quiz "https://mooc1.chaoxing.com/..." --yes
+```
+
+学习通是启发式结构识别，各校皮肤不同；抓不到题时按 §6 用 `config.selectors` 覆盖选择器。

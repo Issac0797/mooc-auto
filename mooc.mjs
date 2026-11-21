@@ -38,6 +38,7 @@ mooc-auto — 中国大学MOOC / 学习通 单元测验自动答题
 命令：
   doctor                        体检：调试端口、登录态、答案库、API Key
   launch                        用独立配置目录拉起浏览器（不碰你日常用的那个）
+  close                         关闭 launch 拉起的那个浏览器（CDP Browser.close）
   list                          列出课程下的测验及得分/次数
   extract  --quiz <id|名称>      打开测验并抓取题目（--yes 才会点“开始测验”）
   answer   --in <题目.json>      调模型/答案库生成答案（--out 输出）
@@ -206,6 +207,15 @@ async function cmdLaunch(cfg, cli) {
   });
   log(`已启动浏览器：${r.exe}`);
   console.log(JSON.stringify(r, null, 2));
+}
+
+async function cmdClose(cfg, cli) {
+  const { context, page } = await connect(cfg.cdpUrl).catch((e) => {
+    throw new Error(`连不上浏览器（可能已经关了）：${e.message.split('\n')[0]}`);
+  });
+  const cdp = await context.newCDPSession(page);
+  await cdp.send('Browser.close').catch(() => {});
+  console.log(JSON.stringify({ closed: true, cdp: cfg.cdpUrl, note: '已请求浏览器退出（窗口会自行关闭）' }, null, 2));
 }
 
 async function cmdList(cfg, cli) {
@@ -387,6 +397,7 @@ async function cmdRun(cfg, cli) {
 const COMMANDS = {
   doctor: cmdDoctor,
   launch: cmdLaunch,
+  close: cmdClose,
   list: cmdList,
   extract: cmdExtract,
   answer: cmdAnswer,
