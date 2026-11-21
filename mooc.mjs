@@ -54,6 +54,7 @@ mooc-auto — 中国大学MOOC / 学习通 单元测验自动答题
   --base-url https://...         任意 OpenAI 兼容网关
   --model deepseek-chat
   --source auto|key|model        auto=先用内置答案库，缺的交给模型（默认）
+  --key-db <路径>                自定义答案库（默认 data/keydb.json，内置库只对本课程有效）
 
 节奏（关键）：
   --pace auto   慕课默认：先快速探测，触发并发限制才降速

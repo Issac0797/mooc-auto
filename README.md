@@ -109,6 +109,14 @@ node mooc.mjs run --quiz "创新方法" --yes --source key
 - `key`：只用答案库，不调模型
 - `model`：全部交给模型
 
+> **内置答案库是按这门课整理的**（南京信息工程大学《敢创会创-大学生创新创业实务》，`courseId=NUIST-1206810807`）。
+> 别人的课程题目不同，命中率会很低甚至为 0，这属正常：`auto` 模式会自动把未命中的题交给模型作答，也可以用 `--source model` 完全跳过它。
+> 想用自己课程的答案库，用 `--key-db <路径>` 指向同格式 JSON（字段见 `src/keydb.mjs`：`q`/`answer`/`options`/`letters`），例如：
+>
+> ```bash
+> node mooc.mjs run --quiz "创业风险" --yes --key-db ./my-course-keydb.json
+> ```
+
 ---
 
 ## 4. 节奏控制（这是关键设计）
