@@ -226,29 +226,41 @@ async function cmdList(cfg, cli) {
   console.log(JSON.stringify({ platform: platform.label, rows }, null, 2));
 }
 
-async function cmdExtract(cfg, cli) {
-  const { page } = await connect(cfg.cdpUrl);
-  const platform = withSelectors(resolvePlatform({ name: cfg.platform, url: page.url() }), cfg);
-  const quiz = await platform.openQuiz(page, cfg.course, cli.quiz, { onLog: log });
-
-  const existing = await page.evaluate(
-    () => document.querySelectorAll('.u-questionItem, .questionLi, .TiMu').length,
-  );
-  if (!existing) {
-    if (!cli.yes) {
-      throw new Error(
-        '测验尚未开始：点「开始测验」会启动 60 分钟计时并可能占用尝试次数。\n' +
-          '确认要开始请加 --yes 重试（或先用 `probe` / `run --dry-run` 查看页面状态）。',
-      );
-    }
-    const startState = await platform.startQuiz(page, { onLog: log });
-    if (!startState.started) throw new Error(`未能开始测验：${startState.reason || '未知原因'}`);
+/** 为一次作业/测验操作开一个独立标签页，避免把别的作业页导航走（答案只在前端，导航即丢） */
+async function withQuizPage(cdpUrl, fn) {
+  const { context } = await connect(cdpUrl);
+  const page = await context.newPage();
+  try {
+    return await fn(page);
+  } finally {
+    await page.close().catch(() => {});
   }
+}
 
-  const questions = await platform.extract(page);
-  const out = cli.out || path.join(cfg.outDir, `questions-${quiz.id}.json`);
-  writeJson(out, { platform: platform.key, quizId: quiz.id, url: page.url(), count: questions.length, questions });
-  console.log(JSON.stringify({ quizId: quiz.id, count: questions.length, out }, null, 2));
+async function cmdExtract(cfg, cli) {
+  return await withQuizPage(cfg.cdpUrl, async (page) => {
+    const platform = withSelectors(resolvePlatform({ name: cfg.platform, url: page.url() }), cfg);
+    const quiz = await platform.openQuiz(page, cfg.course, cli.quiz, { onLog: log });
+
+    const existing = await page.evaluate(
+      () => document.querySelectorAll('.u-questionItem, .questionLi, .TiMu').length,
+    );
+    if (!existing) {
+      if (!cli.yes) {
+        throw new Error(
+          '测验尚未开始：点「开始测验」会启动 60 分钟计时并可能占用尝试次数。\n' +
+            '确认要开始请加 --yes 重试（或先用 `probe` / `run --dry-run` 查看页面状态）。',
+        );
+      }
+      const startState = await platform.startQuiz(page, { onLog: log });
+      if (!startState.started) throw new Error(`未能开始测验：${startState.reason || '未知原因'}`);
+    }
+
+    const questions = await platform.extract(page);
+    const out = cli.out || path.join(cfg.outDir, `questions-${quiz.id}.json`);
+    writeJson(out, { platform: platform.key, quizId: quiz.id, url: page.url(), count: questions.length, questions });
+    console.log(JSON.stringify({ quizId: quiz.id, count: questions.length, out }, null, 2));
+  });
 }
 
 async function cmdAnswer(cfg, cli) {
@@ -284,36 +296,37 @@ async function cmdProbe(cfg, cli) {
 async function cmdFill(cfg, cli) {
   if (!cli.answers) throw new Error('需要 --answers <答案.json>');
   const payload = readJson(cli.answers);
-  const { page } = await connect(cfg.cdpUrl);
-  const platform = withSelectors(resolvePlatform({ name: cfg.platform, url: page.url() }), cfg);
-  if (cli.quiz) await platform.openQuiz(page, cfg.course, cli.quiz);
-  const questions = await platform.extract(page);
-  const list = payload.answers || payload;
-  const answers = questions.map((q) => {
-    const row = Array.isArray(list) ? list[q.i - 1] : list.find((x) => x.i === q.i);
-    return typeof row === 'string' ? row : row?.answer ?? '';
-  });
-  if (answers.some((a) => !a)) throw new Error(`答案文件缺题：第 ${answers.map((a, k) => (a ? null : k + 1)).filter(Boolean).join(', ')} 题`);
+  return await withQuizPage(cfg.cdpUrl, async (page) => {
+    const platform = withSelectors(resolvePlatform({ name: cfg.platform, url: cli.quiz || page.url() }), cfg);
+    if (cli.quiz) await platform.openQuiz(page, cfg.course, cli.quiz, { onLog: log });
+    const questions = await platform.extract(page);
+    const list = payload.answers || payload;
+    const answers = questions.map((q) => {
+      const row = Array.isArray(list) ? list[q.i - 1] : list.find((x) => x.i === q.i);
+      return typeof row === 'string' ? row : row?.answer ?? '';
+    });
+    if (answers.some((a) => !a)) throw new Error(`答案文件缺题：第 ${answers.map((a, k) => (a ? null : k + 1)).filter(Boolean).join(', ')} 题`);
 
-  const pace = defaultPace(cfg, platform);
-  const pacer = makePacer(cfg, platform, pace);
-  log(`填写节奏：${pace}${pace === 'auto' ? '（先快后慢，触发限制才降速）' : ''}`);
+    const pace = defaultPace(cfg, platform);
+    const pacer = makePacer(cfg, platform, pace);
+    log(`填写节奏：${pace}${pace === 'auto' ? '（先快后慢，触发限制才降速）' : ''}`);
 
-  let probe = null;
-  if (platform.key === 'icourse163' && !cli['no-probe'] && pace !== 'slow') {
-    probe = await platform.probeSpeed(page, cfg.probe);
-    if (probe.limited) {
-      await platform.dismissRateLimit(page);
-      pacer.escalate('探测阶段快速点击触发');
-    } else {
-      log(`探测通过：${probe.clicks} 次快速点击（${probe.ms}ms）未触发并发限制 → 保持快速`);
+    let probe = null;
+    if (platform.key === 'icourse163' && !cli['no-probe'] && pace !== 'slow') {
+      probe = await platform.probeSpeed(page, cfg.probe);
+      if (probe.limited) {
+        await platform.dismissRateLimit(page);
+        pacer.escalate('探测阶段快速点击触发');
+      } else {
+        log(`探测通过：${probe.clicks} 次快速点击（${probe.ms}ms）未触发并发限制 → 保持快速`);
+      }
     }
-  }
 
-  const report = await platform.fill(page, questions, answers, { pacer, onLog: log });
-  let submitResult = null;
-  if (cli.submit) submitResult = await platform.submit(page, { onLog: log });
-  console.log(JSON.stringify({ quiz: page.url(), probe, ...report, submit: submitResult }, null, 2));
+    const report = await platform.fill(page, questions, answers, { pacer, onLog: log });
+    let submitResult = null;
+    if (cli.submit) submitResult = await platform.submit(page, { onLog: log });
+    console.log(JSON.stringify({ quiz: page.url(), probe, ...report, submit: submitResult }, null, 2));
+  });
 }
 
 async function cmdRun(cfg, cli) {

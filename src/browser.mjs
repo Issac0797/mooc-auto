@@ -86,7 +86,11 @@ export async function launch({ cdpPort = 9222, profileDir, browserPath, url, hea
 export async function sessionInfo(context) {
   const cookies = await context.cookies().catch(() => []);
   const hasIcourse163 = cookies.some((c) => /icourse163\.org/.test(c.domain) && c.name === 'STUDY_SESS');
-  const hasChaoxing = cookies.some((c) => /chaoxing\.com|edu\.cn/.test(c.domain) && /(_uid|JSESSIONID|fid)/i.test(c.name));
+  // 学习通登录前也会有 JSESSIONID/fid，必须看真正的账号态 cookie
+  const CX_KEYS = ['_uid', 'uf', 'p_auth_token', '_d', 'cx_p_token'];
+  const hasChaoxing = cookies.some(
+    (c) => /chaoxing\.com|edu\.cn/.test(c.domain) && CX_KEYS.includes(c.name) && String(c.value || '').length > 0,
+  );
   return { cookieCount: cookies.length, hasIcourse163, hasChaoxing };
 }
 
